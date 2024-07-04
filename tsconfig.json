@@ -5,7 +5,8 @@
     "noErrorTruncation": true,
     "outDir": "./build",
     "rootDir": "./src",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
   "include": ["src/**/*.ts", "test/**/*.ts"]
 }
