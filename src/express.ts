@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable n/no-extraneous-import */
 import {
   Array,
   Cause,
@@ -10,7 +13,7 @@ import {
   Runtime,
   Supervisor,
 } from 'effect';
-import * as express from 'express';
+import express from 'express';
 import type * as NodeHttp from 'node:http';
 import type * as NodeNet from 'node:net';
 
@@ -135,6 +138,7 @@ export const makeExpress = <R>(
     // Allow for providing route handlers to a custom Express runtime
     const runtime = <
       Handlers extends Array.NonEmptyReadonlyArray<
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         EffectRequestHandler<any, any, any, any, any, any>
       >,
     >(

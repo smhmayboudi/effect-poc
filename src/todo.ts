@@ -20,12 +20,14 @@ export class Todo extends Schema.Class<Todo>('Todo')({
   completed: Schema.Boolean,
 }) {}
 
-export const CreateTodoParams = Todo.pipe(Schema.omit('id'));
-export type CreateTodoParams = typeof CreateTodoParams.Type;
-
-export const UpdateTodoParams = Schema.partial(Todo, {exact: true}).pipe(
+export const CreateTodoParams = Schema.Struct(Todo.fields).pipe(
   Schema.omit('id')
 );
+export type CreateTodoParams = typeof CreateTodoParams.Type;
+
+export const UpdateTodoParams = Schema.partial(Schema.Struct(Todo.fields), {
+  exact: true,
+}).pipe(Schema.omit('id'));
 export type UpdateTodoParams = typeof UpdateTodoParams.Type;
 
 // =============================================================================
