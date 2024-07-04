@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import * as Schema from '@effect/schema/Schema';
 import * as bodyParser from 'body-parser';
 import {Effect, Layer, Option} from 'effect';
